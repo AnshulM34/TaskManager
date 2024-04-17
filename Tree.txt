@@ -1,0 +1,13 @@
+import './App.css';
+
+export const Tree = ({ dataSource }) => {
+  const renderTree = (node) => {
+    return (
+      <li key={node.id}>
+        {node.name}
+        {node.children && <ul>{node.children.map(renderTree)}</ul>}
+      </li>
+    );
+  };
+  return <ul>{dataSource.map(renderTree)}</ul>;
+};

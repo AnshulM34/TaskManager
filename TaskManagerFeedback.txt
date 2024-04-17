@@ -1,0 +1,46 @@
+React
+--> i would like to use reactquery instead of regular axios for react apps
+reactquery is good for server side state management and has lot of benifits (invalidation, caching, etc)
+--> loading component when apis are loading and error component if any failure (used just text for now)
+--> App component to load landingpage, which can be build of many component (App component is quite simple now but landing page can take care of things like giving routes etc)
+--> index.tsx to add all providers if needed ( redux, recoil, reactquery, custom etc) (did not had any use case for this)
+--> linting and prettify is important for app (time constraint not able to do it)
+---> used react-testing-library / jest for tests and msw to mock apis ( it will be more behaviour end user testing) (msw helps for development too)
+---> test file residing beside component being tested
+---> used react.memo when you want to avoid child getting rendered again and again just because parent is rendered so we can separate out that component
+---> divided a component into small meaning full one,
+---> apis to be separated from components
+---> axios interceptors we could use for adding common headers (did not got use case)
+---> no client side sate-mamgement library used since not required
+--> webpack used ts-loader instead of babel-loader since all typescript
+--> added some configuration to tsconfig.json ( but i think we could separate this with server tsconfig.json)
+--> types added for task can live besides apis
+
+Node
+web api service
+1. used repository pattern ( service acting as wire between controller and repositories) but since no buisnesslogic used service as repository
+2. created task.controller for enabling routes (controller should not have any business logic all should be delegated to service
+3. created task.service, validation service was not needed but could help if validation required(service should do validation and talk to repository for db related work
+4. controller is abstracted from db layer since controller should not know which db it is connected to
+5. we could have dotenv for environment variables, ( but no use case for now)
+6. created some files in common for middelware for authorization, error-handling, etc
+7. testing was done using jest and supertest but could not run it
+8. logging is missing but that could have been added for logging errors with relevant infrmation help to debug
+9. index.ts as entry point for this service , which will wire up with router and other middelwares and custom one
+10 service folder was created with taskmanagerservice as one service , we can add multiple bffs in this services folder or keep it as separate repo.
+11. connect db service created to separate out connection to db which can be configurable at runtime if we got choice to connect to other db 
+
+i would like to keep package.json separate for both server and client so that they can be deployed separately
+we can use monorepo approach or use NX or turorepo if it make sense 
+
+pending things not able to do because of time constraints
+1. not able to run tests ( something wrong i would have done with jsest.config )
+2. separate out package.json/tsconfig/jest.config for server and client so they can be deployed independently
+3. id of task could have been guid
+4. eslint and prettify
+5. routing of app we could use BrowserRouter and create route for TaskManager
+
+challenge to run mongo but did mocked with different file and issues with running jest test 
+
+
+
