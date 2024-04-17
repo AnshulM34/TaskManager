@@ -6,7 +6,7 @@ import {connectToDB} from './db.service'
 
 const PORT =  5001;
 const app: Application = express();
-//connectToDB();
+//connectToDB(); //commented to test app
 
 app.use(express.json());
 app.use(bodyParser.json())
