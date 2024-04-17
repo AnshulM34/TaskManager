@@ -18,7 +18,7 @@ export const updateTaskStatus = async (taskId: string) => {
   try {
     await Task.findByIdAndUpdate(taskId) //updatestatus to done
   }catch(err) {
-
+  throw err;
   }
 }
 
