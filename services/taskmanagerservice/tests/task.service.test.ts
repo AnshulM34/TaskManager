@@ -48,3 +48,5 @@ describe('test taskmanager api', () => {
       .expect(200);
   })
 })
+
+//testing for error response ( all negative scenarios is still pending)
