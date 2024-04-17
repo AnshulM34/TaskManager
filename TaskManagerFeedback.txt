@@ -34,7 +34,7 @@ i would like to keep package.json separate for both server and client so that th
 we can use monorepo approach or use NX or turorepo if it make sense 
 
 pending things not able to do because of time constraints
-1. not able to run tests ( something wrong i would have done with jsest.config )
+1. not able to run tests ( something wrong i would have done with jsest.config ) and server test can also be more added
 2. separate out package.json/tsconfig/jest.config for server and client so they can be deployed independently
 3. id of task could have been guid
 4. eslint and prettify
